@@ -1,0 +1,26 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-service
+
+eureka:
+  client:
+    #将自己注册进Eureka
+    register-with-eureka: false
+    #是否从Eureka抓取已有的注册信息，默认true。单节点无所谓，集群必须要true才能配合ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+ribbon:
+  #建立连接所用时间,这里改成5秒
+  ReadTimeout: 5000
+  #建立连接后读取资源所用时间
+  ConnectTimeout: 5000
+
+#用于服务降级 在注解@FeignClient中添加fallbackFactory属性值
+feign:
+  hystrix:
+    enabled: true
