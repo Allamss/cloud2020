@@ -33,7 +33,7 @@
         <!--添加zookeeper3.4.9版本-->
         <groupId>org.apache.zookeeper</groupId>
         <artifactId>zookeeper</artifactId>
-        <version>3.4.9</version>
+        <version>3.4.14</version>
         <exclusions>
             <exclusion>
                 <groupId>org.slf4j</groupId>
